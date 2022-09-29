@@ -1,7 +1,7 @@
 body{
 	font-family: serif;
 	color:rgb(0, 0, 0);
-	background-color: rgb(226, 220, 220);
+	background-color: rgb(255, 255, 255);
 	padding-block: 30px 30px 30px;
 }
 h2{
@@ -175,3 +175,20 @@ table {
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #9c9c9c;}
+
+
+
+  /*----------Pour le tuto-------*/
+
+  /*Avec div class*/
+.Tuto-01 {
+	text-align: center;
+	color: rgb(255, 0, 0);
+	text-decoration: underline rgb(0, 0, 0);
+}
+
+/*Avec div id*/
+#unique {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif ;
+}
