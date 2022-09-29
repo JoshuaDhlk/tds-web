@@ -1,6 +1,8 @@
 body{
 	font-family: serif;
-	color:gray;
+	color:rgb(0, 0, 0);
+	background-color: rgb(226, 220, 220);
+	padding-block: 30px 30px 30px;
 }
 h2{
 	color: blue;
@@ -8,7 +10,7 @@ h2{
 }
 
 #ma-boutique{
-	color:green;
+	color:rgb(150, 150, 150);
 	font-size: 40px;
 	font-weight: bold;
 	margin: 50px 250px 150px;
@@ -33,27 +35,78 @@ span{
 	font-weight: 900;
 	color: cyan;
 }
+.ps {
+	text-decoration: underline;
+}
+#bText{
+	background-color: darkcyan;
+	color: white;
+}
+#bText strong {
+	background-color: red;
+}
+/*
+p{
+	color:aqua;
+}*/
+#tc{
+	text-decoration: overline darkgreen;
+}
 
-h1, h2 :hover ,p span {
+
+
+
+
+
+
+
+
+
+.h1tabl {
+	text-decoration: black;
+	margin: 50px 100px 50px;
+}
+
+.p1, .h1tabl {
+	color: rgb(75, 75, 75);
+}
+
+
+
+.TJ {
+color: rgb(0, 0, 0);
+}
+
+
+table {
+	width: 100%;
+  }
+
+
+
+
+
+
+
+
+/*h1, h2 :hover ,p span {
 	background-color: yellow;
 	margin: 50px 50px 50px;
 
 }
-
+*/
 .menu>li {
 	display: inline-block;
 	margin: 0 20px ;
 }
 
 
-
-/* Style the navbar */
 #navbar {
 	overflow: hidden;
 	background-color: #333;
   }
   
-  /* Navbar links */
+  
   #navbar a {
 	float: left;
 	display: block;
@@ -64,7 +117,7 @@ h1, h2 :hover ,p span {
 	margin-left: 25px;
   }
   
-  /* Page content */
+  
   .content {
 	padding: 12px;
   }
@@ -121,4 +174,4 @@ h1, h2 :hover ,p span {
   .dropdown:hover .dropdown-content {display: block;}
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn {background-color: #9c9c9c;}
