@@ -213,15 +213,30 @@ td{
 
   /*----------Pour le tuto-------*/
 
-  /*Avec div class*/
+  /*Avec div class
 .Tuto-01 {
 	text-align: center;
 	color: rgb(255, 0, 0);
 	text-decoration: underline rgb(0, 0, 0);
 }
 
-/*Avec div id*/
+Avec div id
 #unique {
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif ;
 }
+
+Point 1-
+p{
+	color: rgb(41, 39, 78);
+	font-style: italic;
+	font-size: 20px;
+}
+
+Point2-
+.p1, .h1tabl {
+	color: rgb(219, 0, 0);
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+*/
