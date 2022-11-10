@@ -2,7 +2,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,8 @@
 </head>
 <body>
 <form action="" method="post">
-	<input type="text" name="">
+	<input type="text" name="todolist" placeholder="Entrez les todo">
+	<button>Nouvelle tache</button>
 </form>	
 
 </body>
