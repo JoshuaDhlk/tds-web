@@ -12,3 +12,21 @@ $scrollFunction = new Func("scrollFunction", function() use (&$document) {
 set($window, "onscroll", new Func(function() use (&$scrollFunction) {
   call($scrollFunction);
 }));
+
+?>
+
+<?php
+$focusOnElement = new Func("focusOnElement", function($element_id = null) use (&$«24») {
+  call_method(call($«24», _concat("#div_", $element_id)), "goTo");
+});
+
+?>
+<div id="div_element1">
+   yadda yadda 
+</div>
+<div id="div_element2">
+   blah blah
+</div>
+
+<span onclick="focusOnElement('element1');">Click here to go to element 1</span>
+<span onclick="focusOnElement('element2');">Click here to go to element 2</span>
