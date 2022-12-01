@@ -21,12 +21,15 @@
   </section>
   <!-- End Presentation Section -->
 
+<<<<<<< HEAD
   <!-- competences Section -->
   <section id="competences">
   <?php include('./php/competences.php') ?>
   </section>
   <!-- End competences -->
 
+=======
+>>>>>>> 8af23fde30e644c182ba48bb11877c0486d32126
   <!-- Projects Section -->
   <section id="projects">
   <?php include('./php/projets.php') ?>
