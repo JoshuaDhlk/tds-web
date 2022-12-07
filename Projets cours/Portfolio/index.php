@@ -21,12 +21,6 @@
   </section>
   <!-- End Presentation Section -->
 
-  <!-- competences Section -->
-  <section id="competences">
-  <?php include('./php/competences.php') ?>
-  </section>
-  <!-- End competences -->
-
   <!-- Projects Section -->
   <section id="projects">
   <?php include('./php/projets.php') ?>
