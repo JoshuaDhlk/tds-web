@@ -12,11 +12,13 @@
 <div class="bar"></div>
 </div>
 <ul>
-<li><a href="#home" data-after="Home">Home</a></li>
-<li><a href="#services" data-after="Service">Compétences</a></li>
-<li><a href="#projects" data-after="Projects">Projets</a></li>
+<li><a href="#home" data-after="Home">Acceuil</a></li>
 <li><a href="#about" data-after="About">A propos</a></li>
-<li><a href="#contact" data-after="Contact">Contacter</a></li>
+<li><a href="services" data-after="Service">Présentation</a></li>
+<li><a href="#services" data-after="Service">Compétences</a></li>
+<li><a href="#projects" data-after="Projects">Experience</a></li>
+<li><a href="#formation" data-after="Formation">Formation</a></li>
+<li><a href="#contact" data-after="Contact">Formulaire de contact</a></li>
 </ul>
 </div>
 </div>
