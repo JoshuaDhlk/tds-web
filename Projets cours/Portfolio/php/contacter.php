@@ -1,64 +1,99 @@
 <?php
-	
-if(isset($_POST['formMail']))
+
+
+
+if(!empty($_POST))
 {
-	if(!empty($_POST['name']) AND !empty($_POST['mail']) AND !empty($_POST['message']))
-	{
-		$header = "MIME-Version: 1.0\r\n";
-		$header .= 'From:"Turpin.com"<contact@turpin.com>' . "\n";
-		$header .= 'Content-Type:text/html; charset="utf-8"' . "\n";
-		$header .= 'Content-Transfer-Encoding: 8bit';
+    $errors = array();
 
-		$message = '
-			<html>
-				<body>
-					<div align="center">
-						<img src="http://primfx.com/mailing/banniere.png" /> <br />
-						<p> Nom de l\'expédiyeur :' . $_POST['name'] . '</p>
-						<p> Mail de l\'expédiyeur :' . $_POST['mail'] . '</p>
-						<p>' . nl2br($_POST['message']). '</p>
-						<img src="http://primfx.com/mailing/separation.png" />
-					</div>
-				</body>
-			</html>
-		';
+    if(empty($_POST['nom']))
+    {
+        $errors['nom1'] = "Le champ du nom ne peut pas-être vide";
+    }
 
-	mail("warmdarkrai@gmail.com", $message, $header);
+    if(empty($_POST['prenom']))
+    {
+        $errors['prenom1'] = "Le champ du prénom ne peut pas-être vide";
+    }
 
-	$msg = "Votre message a bien été envoyé !";
+    if(empty($_POST['telephone']))
+    {
+        $errors['telephone1'] = "Le champ du téléphone ne peut pas-être vide";
+    }
 
-	}
-	else
-	{
-		$msg = "Tous les champs doivent être complétés !";
-	}
+    if(empty($_POST['courriel']))
+    {
+        $errors['courriel1'] = "Le champ de l'email ne peut pas-être vide";
+    }
 
-	
+    if(empty($_POST['message']))
+    {
+        $errors['message1'] = "Le champ du message ne peut pas-être vide";
+    }
+
+    if(count($errors) == 0)
+    {
+        header ("Location: success.php");
+        exit();
+    }
+
 }
+
+$courriel = 'joe@example.com';
+$courriel2 = 'e-mail valide';
+
+if (filter_var($courriel, FILTER_VALIDATE_EMAIL)) {
+    echo "L'adresse email '$courriel' est considérée comme valide.";
+}
+if (filter_var($courriel2, FILTER_VALIDATE_EMAIL)) {
+    echo "L'adresse email '$courriel2' est considérée comme valide.";
+} else {
+    echo "L'adresse email '$courriel2' est considérée comme invalide.";
+}
+
 ?>
 
 <!DOCTYPE html>
-<html>
 <head>
-	<meta charset="utf-8" />
-	<title> Contact </title>
+    <meta charset="UTF-8">
+    <title>FORMULAIRE</title>
 </head>
 <body>
-	<h2> Formulaire de contact ! </h2>
-	<form method="POST" action="">
-	<input type="text" name="name" placeholder="Votre nom" value="<?php if(isset($_POST['name'])) { echo $_POST['name']; } ?>" /> <br/> <br/>
-	<input type="email" name="mail" placeholder="Votre email" value="<?php if(isset($_POST['mail'])) { echo $_POST['mail']; } ?>"/> <br/> <br/>
-	<textarea name="message" placeholder="Votre Message"><?php if(isset($_POST['message'])) { echo $_POST['message']; } ?></textarea> <br/> <br/>
-	<input type="submit" value="Envoyer !" name="formMail" />
-	</form> <br/> <br/>
+<form action="form.php" method="post">
 
-	<?php 
-		if(isset($msg))
-		{
-			echo $msg;
-		}
- 
-	?>
+    <p>
+        <label  for="nom">Nom :</label>
+        <input  type="text"  id="nom"  name="user_name" value="<?php if(isset($_POST['nom'])) echo $_POST['nom1']; ?>" />
+    </p>
+    <p><?php if(isset($errors['nom1'])) echo $errors['nom1']; ?></p>
 
+    <p>
+        <label  for="prenom">Prénom :</label>
+        <input  type="text"  id="prenom"  name="user_surname" value="<?php if(isset($_POST['prenom'])) echo $_POST['prenom1']; ?>" />
+    </p>
+    <p><?php if(isset($errors['prenom1'])) echo $errors['prenom1']; ?></p>
+
+
+    <p>
+        <label  for="telephone">Téléphone :</label>
+        <input  type="text"  id="telephone"  name="user_telephone" value="<?php if(isset($_POST['telephone'])) echo $_POST['telephone1']; ?>" />
+    </p>
+    <p><?php if(isset($errors['telephone1'])) echo $errors['telephone1']; ?></p>
+
+    <p>
+        <label  for="courriel">Courriel :</label>
+        <input  type="email"  id="courriel"  name="user_email" value="<?php echo $courriel2; ?>" />
+    </p>
+    <p><?php if(isset($errors['courriel1'])) echo $errors['courriel1']; ?></p>
+
+    <label  for="message">Message :</label>
+    <textarea  id="message"  name="user_message"></textarea>
+
+    <p>
+    <div  class="button">
+        <button  type="submit">Envoyer votre message</button>
+    </div>
+    </p>
+</form>
 </body>
 </html>
