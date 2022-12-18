@@ -27,7 +27,6 @@
   </section>
   <!-- End Competences Section -->
 
-
   <!-- Projects Section -->
   <section id="projects">
   <?php include('./php/projets.php') ?>
