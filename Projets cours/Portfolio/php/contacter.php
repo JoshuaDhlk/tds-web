@@ -32,7 +32,7 @@
 
       $mailheader = "From:".$name."<".$email.">\r\n";
 
-      $recipient = "example@gmail.com";
+      $recipient = "warmdarkrai@gmail.com";
 
       mail($recipient, $subject, $message, $mailheader) or die("Error!");
 
