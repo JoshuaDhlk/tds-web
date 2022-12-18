@@ -1,99 +1,65 @@
-<?php
-
-
-
-if(!empty($_POST))
-{
-    $errors = array();
-
-    if(empty($_POST['nom']))
-    {
-        $errors['nom1'] = "Le champ du nom ne peut pas-être vide";
-    }
-
-    if(empty($_POST['prenom']))
-    {
-        $errors['prenom1'] = "Le champ du prénom ne peut pas-être vide";
-    }
-
-    if(empty($_POST['telephone']))
-    {
-        $errors['telephone1'] = "Le champ du téléphone ne peut pas-être vide";
-    }
-
-    if(empty($_POST['courriel']))
-    {
-        $errors['courriel1'] = "Le champ de l'email ne peut pas-être vide";
-    }
-
-    if(empty($_POST['message']))
-    {
-        $errors['message1'] = "Le champ du message ne peut pas-être vide";
-    }
-
-    if(count($errors) == 0)
-    {
-        header ("Location: success.php");
-        exit();
-    }
-
-}
-
-$courriel = 'joe@example.com';
-$courriel2 = 'e-mail valide';
-
-if (filter_var($courriel, FILTER_VALIDATE_EMAIL)) {
-    echo "L'adresse email '$courriel' est considérée comme valide.";
-}
-if (filter_var($courriel2, FILTER_VALIDATE_EMAIL)) {
-    echo "L'adresse email '$courriel2' est considérée comme valide.";
-} else {
-    echo "L'adresse email '$courriel2' est considérée comme invalide.";
-}
-
-?>
-
 <!DOCTYPE html>
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <title>FORMULAIRE</title>
+    <meta charset="utf-8">
+    <title>Contact</title>
 </head>
+
 <body>
-<form action="form.php" method="post">
-
-    <p>
-        <label  for="nom">Nom :</label>
-        <input  type="text"  id="nom"  name="user_name" value="<?php if(isset($_POST['nom'])) echo $_POST['nom1']; ?>" />
-    </p>
-    <p><?php if(isset($errors['nom1'])) echo $errors['nom1']; ?></p>
-
-    <p>
-        <label  for="prenom">Prénom :</label>
-        <input  type="text"  id="prenom"  name="user_surname" value="<?php if(isset($_POST['prenom'])) echo $_POST['prenom1']; ?>" />
-    </p>
-    <p><?php if(isset($errors['prenom1'])) echo $errors['prenom1']; ?></p>
-
-
-    <p>
-        <label  for="telephone">Téléphone :</label>
-        <input  type="text"  id="telephone"  name="user_telephone" value="<?php if(isset($_POST['telephone'])) echo $_POST['telephone1']; ?>" />
-    </p>
-    <p><?php if(isset($errors['telephone1'])) echo $errors['telephone1']; ?></p>
-
-    <p>
-        <label  for="courriel">Courriel :</label>
-        <input  type="email"  id="courriel"  name="user_email" value="<?php echo $courriel2; ?>" />
-    </p>
-    <p><?php if(isset($errors['courriel1'])) echo $errors['courriel1']; ?></p>
-
-    <label  for="message">Message :</label>
-    <textarea  id="message"  name="user_message"></textarea>
-
-    <p>
-    <div  class="button">
-        <button  type="submit">Envoyer votre message</button>
+<div class="contact container">
+      <div>
+        <h1 class="section-title">Info <span>contact</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Numéro de téléphone</h1>
+            <h2>06 95 66 44 63</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>Joshua.dahlke@hotmail.com</h2>
+            <h2>Joshua.dahlke@sts-sio-caen.info</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Adresse</h1>
+            <h2>7 allée de marronniers 27260</h2>
+          </div>
+        </div>
+      </div>
     </div>
-    </p>
-</form>
+
+    <h1>Contactez-nous</h1>
+    <form method="post">
+        <label>Votre email</label>
+        <input type="email" name="email" required>
+        <label>Message</label>
+        <textarea name="message" required></textarea>
+        <input type="submit">
+    </form>
+    <?php
+    if (isset($_POST['message'])) {
+        $entete  = 'MIME-Version: 1.0' . "\r\n";
+        $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+        $entete .= 'From: webmaster@monsite.fr' . "\r\n";
+        $entete .= 'Reply-to: ' . $_POST['email'];
+
+        $message = '<h1>Message envoyé depuis la page Contact de monsite.fr</h1>
+        <p><b>Email : </b>' . $_POST['email'] . '<br>
+        <b>Message : </b>' . htmlspecialchars($_POST['message']) . '</p>';
+
+        $retour = mail('destinataire@free.fr', 'Envoi depuis page Contact', $message, $entete);
+        if($retour)
+            echo '<p>Votre message a bien été envoyé.</p>';
+    }
+    ?>
 </body>
 </html>
