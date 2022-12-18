@@ -23,7 +23,7 @@ if(isset($_POST['formMail']))
 			</html>
 		';
 
-	mail("warmdarkrai@gmail.com", "Contact - monportfolio", $message, $header);
+	mail("warmdarkrai@gmail.com", $message, $header);
 
 	$msg = "Votre message a bien été envoyé !";
 
