@@ -1,0 +1,124 @@
+
+body{
+	background-image: "movingblock";
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Aesthetic-Red-Wallpaper-4K-HD.jpg');
+    background-size: cover;
+    height: 100vh;
+	font-family: 'Dangrek';font-size: 22px;
+}
+
+
+  /* Block de texte 1 rouge */
+.container {
+	position: relative;
+	width: 25%; 
+	padding-left: 27%;
+	padding-bottom: 35%;
+  }
+  /* Bottom right text */
+  .text-block {
+	position: absolute;
+	bottom: 100px;
+	right: 90px;
+	background-color: rgba(255, 14, 14, 0.589);
+	color: rgb(255, 255, 255);
+	padding-left: 90px;
+	padding-right: 200px;
+  }
+  
+
+  /* Create a sticky/fixed navbar */
+#navbar {
+	overflow: hidden;
+	background-image: url(https://www.pixelstalk.net/wp-content/uploads/images6/Aesthetic-Red-Wallpaper-4K-HD.jpg);
+	padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
+	transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+	position: fixed; /* Sticky/fixed navbar */
+	width: 100%;
+	top: 0; /* At the top */
+	z-index: 99;
+  }
+  /* Style the navbar links */
+  #navbar a {
+	float: left;
+	color: rgb(0, 0, 0);
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 28px;
+	line-height: 25px;
+	border-radius: 57px;
+  }
+  /* Style the logo */
+  #navbar #logo {
+	font-size: 35px;
+	font-weight: bold;
+	transition: 0.4s;
+  }
+  
+  /* Links on mouse-over */
+  #navbar a:hover {
+	background-color: #c0010171;
+	color: rgba(0, 0, 0, 0.568);
+  }
+  
+  /* Style the active/current link (Seulement Home*/
+  #navbar a.active {
+	background-color: rgb(206, 206, 206);
+	color: rgb(75, 70, 70);
+  }
+  
+  /* Display some links to the right */
+  #navbar-right {
+	float: left;
+  }
+
+
+/*image qui se relève de présentation*/
+  .container2 {
+	width: 100%;
+	min-height: 100vh;
+	background: "https://www.pixelstalk.net/wp-content/uploads/images6/Aesthetic-Red-Wallpaper-4K-HD.jpg";
+  }
+  .image {
+	perspective: 3000px;
+	width: 10%;
+	position: absolute;
+	left: 100%;
+	top:50%;
+	transform: translate(-50%, -50%);
+	transform-style: preserve-3d;
+  }
+  .image img {
+	transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
+	box-shadow: -80px 60px 15px 5px rgba(0,0,0,0.4);
+	transition: all .4s;
+	transform-style: preserve-3d;
+  }
+  .image:hover img {
+	transform: rotateX(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+	box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
+  }
+
+
+/*
+  .glow {
+	font-size: 80px;
+	color: #fff;
+	text-align: center;
+	animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+	from {
+	  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+	}
+	
+	to {
+	  text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+	}
+  }
+  */
