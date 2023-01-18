@@ -1,0 +1,33 @@
+body {
+	background: #000000;
+
+}
+
+img{
+	height: 300px;
+	width: 400px;
+}
+
+h1 {
+	text-align: center;
+	text-decoration: solid;
+	color: aliceblue;
+}
+.photos{
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10%;
+
+}
+
+.navAlb{
+	margin-bottom: 20px;
+}
+
+a{
+	text-decoration: none;
+	color: orange;
+	margin: 5%;
+	padding: 14px 16px;
+}
